@@ -3,6 +3,7 @@ get '/' do
 end
 
 get '/notes' do
+  #index - displays a list of all photos
   #if there is ony 1 model, sometimes just use /
   erb :index
 end
@@ -10,25 +11,31 @@ end
 #CRUD
 
 get '/notes/new' do
-  #new
+  #new - returns an HTML form creating a new note
+  erb :new_note
 end
 
 post '/notes' do
-    #create
+    #create - creates a new note
+  erb :new_note_confirmation
 end
 
 get '/notes/:id' do
-    #show
+    #show - shows a specific note
+    erb :show_note
 end
 
 get '/notes/:id/edit' do
-   #edit
+   #edit - returns an HTML form for editing a photo
+   erb :edit_note
 end
 
 put '/notes/:id' do
-  #update
+  #update - updates a specific photo
+  erb :edit_note_confirmation
 end
 
 delete '/photos/:id' do
-  #destroy
+  #destroy - deletes a specific photo
+  erb :delete_note_confirmation
 end
