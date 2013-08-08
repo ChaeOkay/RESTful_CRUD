@@ -1,41 +1,33 @@
 get '/' do
-  redirect '/notes'
+  redirect '/note'
 end
 
-get '/notes' do
+get '/note' do
   #index - displays a list of all photos
   #if there is ony 1 model, sometimes just use /
+  @notes = Note.all
   erb :index
 end
 
 #CRUD
 
-get '/notes/new' do
+get '/note/new' do
   #new - returns an HTML form creating a new note
   erb :new_note
 end
 
-post '/notes' do
+post '/note' do
     #create - creates a new note
   erb :new_note_confirmation
 end
 
-get '/notes/:id' do
+get '/note/:id' do
     #show - shows a specific note
+    @note = Note.find_by_id(params[:id])
     erb :show_note
 end
 
-get '/notes/:id/edit' do
+get '/note/:id/edit' do
    #edit - returns an HTML form for editing a photo
    erb :edit_note
-end
-
-put '/notes/:id' do
-  #update - updates a specific photo
-  erb :edit_note_confirmation
-end
-
-delete '/photos/:id' do
-  #destroy - deletes a specific photo
-  erb :delete_note_confirmation
 end
