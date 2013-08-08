@@ -47,6 +47,11 @@ get '/note/:id/delete' do
   redirect '/note'
 end
 
+get '/note/:id/confirm_delete' do
+  @note = Note.find_by_id(params[:id])
+  erb :confirm_delete
+end
+
 #progress
 # delete  '/note/:id' do
 #   #destroy - destroy specific note
