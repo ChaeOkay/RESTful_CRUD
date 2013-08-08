@@ -1,9 +1,26 @@
 <div class="panel">
   <ul class="list-group">
     <% @notes.each do |note| %>
-      <li><a href='/note/<%= note.id %>'><%= note.title %></li>
+      <li><a href='/note/<%= note.id %>'><%= note.title %></a></li>
     <% end %>
       <li></li>
   </ul>
 </div>
-<a href="/note/new"><button type="button" class="btn btn-default navbar-btn">Create New Post</button></a>
+<button id="new_note" type="button" class="btn btn-default navbar-btn">Create New Note</button>
+
+
+<div class="new_note">
+  <h3>Create New Note</h3>
+  <form method="post" action="/note">
+
+    <ul class="list-group">
+      <li><label>Title</lable><br>
+      <input name="title" type="string"></li>
+
+      <li><label>Content</label><br>
+      <input name="content" type="string"></li>
+    </ul>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>

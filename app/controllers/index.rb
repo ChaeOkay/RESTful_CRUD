@@ -58,3 +58,10 @@ end
 #   Note.find_by_id(params[:id]).destroy
 #   redirect '/note'
 # end
+
+# put '/note/:id/update' do
+#   #update - update specific note
+#   @note = Note.find_by_id(params[:id])
+#   @note.update_attributes(:title => params[:title], :content => params[:content])
+#   redirect '/note'
+# end
