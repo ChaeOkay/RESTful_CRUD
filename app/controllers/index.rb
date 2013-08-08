@@ -17,8 +17,9 @@ get '/note/new' do
 end
 
 post '/note' do
-    #create - creates a new note
-  erb :new_note_confirmation
+  #create - creates a new note
+    Note.create(:title => params[:title], :content => params[:content])
+  redirect '/note'
 end
 
 get '/note/:id' do
