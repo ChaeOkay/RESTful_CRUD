@@ -1,0 +1,13 @@
+<h3>Edit: <%= @note.title %></h3>
+<form method="post" action="/note/<%= @note.id %>">
+
+  <ul class="list-group">
+    <li><label>Title</lable><br>
+    <input name="title" type="string" value="<%= @note.title %>"></li>
+
+    <li><label>Content</label><br>
+    <input name="content" type="string" value="<%= @note.content%>"></li>
+  </ul>
+
+  <input type="submit" value="Submit">
+</form>

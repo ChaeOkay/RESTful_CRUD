@@ -30,5 +30,26 @@ end
 
 get '/note/:id/edit' do
    #edit - returns an HTML form for editing a photo
+   @note = Note.find_by_id(params[:id])
    erb :edit_note
 end
+
+post '/note/:id' do
+  #update - update specific note
+  @note = Note.find_by_id(params[:id])
+  @note.update_attributes(:title => params[:title], :content => params[:content])
+  redirect '/note'
+end
+
+get '/note/:id/delete' do
+  #get being used instead of delete to maintain consistancy of view
+  Note.find_by_id(params[:id]).destroy
+  redirect '/note'
+end
+
+#progress
+# delete  '/note/:id' do
+#   #destroy - destroy specific note
+#   Note.find_by_id(params[:id]).destroy
+#   redirect '/note'
+# end
