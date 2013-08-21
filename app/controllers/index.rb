@@ -46,10 +46,3 @@ get '/note/:id/delete' do
   Note.find_by_id(params[:id]).destroy
   redirect '/note'
 end
-
-#progress
-# delete  '/note/:id' do
-#   #destroy - destroy specific note
-#   Note.find_by_id(params[:id]).destroy
-#   redirect '/note'
-# end
