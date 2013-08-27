@@ -8,26 +8,34 @@ get '/notes' do
 end
 
 get '/notes/new' do
-  erb :modify
+  erb :new_note
 end
 
 post '/notes' do
-  erb :all
+  Note.create(title: params[:title], content: params[:content])
+  redirect '/notes'
 end
 
 get '/notes/:id' do
-  @note = Note.find_by_id(params[:id])
+  note(params[:id])
   erb :single
 end
 
 get '/notes/:id/edit' do
-  erb :modify
+  note(params[:id])
+  erb :edit_note
 end
 
-puts '/notes/:id' do
-  redirect '/notes/#{id}'
+post '/notes/:id' do
+  note(params[:id])
+  @note.title = params[:title]
+  @note.content = params[:content]
+  @note.save
+  redirect "/notes/#{@note.id}"
 end
 
 delete '/notes/:id' do
+  note(params[:id])
+  @note.destroy
   redirect '/notes'
 end

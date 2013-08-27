@@ -1,13 +1,7 @@
-<h3>Create New Note</h3>
-<form method="post" action="/note">
-
-  <ul class="list-group">
-    <li><label>Title</lable><br>
-    <input name="title" type="string"></li>
-
-    <li><label>Content</label><br>
-    <input name="content" type="string"></li>
-  </ul>
-
-  <input type="submit" value="Submit">
-</form>
+<div class='container'>
+  <h3>Create New Note</h3>
+  <form action='/notes' method='post'>
+    <%= erb :_form %>
+    <input type='submit' value='submit'>
+  </form>
+</div>

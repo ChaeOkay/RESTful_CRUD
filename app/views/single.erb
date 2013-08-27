@@ -1,4 +1,13 @@
 <div class='container'>
   <h3><%= @note.title %></h3>
   <p><%= @note.content %></p>
+  <p>
+    <a href='/notes/<%= @note.id %>/edit'>Edit</a>
+  </p>
+  <p>
+    <form action='/notes/<%= @note.id %>' method='post'>
+      <input type='hidden' name='_method' value='delete'>
+      <input type='submit' value='Delete'>
+    </form>
+  </p>
 </div>

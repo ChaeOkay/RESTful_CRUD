@@ -1,5 +1,12 @@
-<ul>
-  <% @notes.each do |note| %>
-    <li><a href='/notes/<%= note.id %>'><%= note .title %></a></li>
-  <% end %>
-</ul>
+<div class=container>
+  <div><a href='/notes/new'>Create New Note</a>
+  </div>
+
+  <div>
+    <ul>
+      <% @notes.each do |note| %>
+        <li><a href='/notes/<%= note.id %>'><%= note .title %></a></li>
+      <% end %>
+    </ul>
+  <div>
+</div>
