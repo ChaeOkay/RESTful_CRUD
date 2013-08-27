@@ -1,11 +1,11 @@
-<div class=container>
-  <div><a href='/notes/new'>Create New Note</a>
+<div class='all_notes'>
+  <div><a id='new_note' href=''>Create New Note</a>
   </div>
 
   <div>
     <ul>
       <% @notes.each do |note| %>
-        <li><a href='/notes/<%= note.id %>'><%= note .title %></a></li>
+        <li><a href=''><%= note .title %></a></li>
       <% end %>
     </ul>
   <div>

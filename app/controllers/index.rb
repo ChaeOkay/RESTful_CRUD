@@ -8,7 +8,7 @@ get '/notes' do
 end
 
 get '/notes/new' do
-  erb :new_note
+  # erb :new_note
 end
 
 post '/notes' do
