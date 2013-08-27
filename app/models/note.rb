@@ -1,4 +1,3 @@
 class Note < ActiveRecord::Base
-  validates_presence_of :title, :content
-  attr_accessible :title, :content
+  # Remember to create a migration!
 end

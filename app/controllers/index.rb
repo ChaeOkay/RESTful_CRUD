@@ -1,4 +1,31 @@
 get '/' do
-  # Look in app/views/index.erb
-  erb :index
+  redirect '/notes'
+end
+
+get '/notes' do
+  erb :all
+end
+
+get '/notes/new' do
+  erb :modify
+end
+
+post '/notes' do
+  erb :all
+end
+
+get '/notes/:id' do
+  erb :single
+end
+
+get '/notes/:id/edit' do
+  erb :modify
+end
+
+puts '/notes/:id' do
+  redirect '/notes/#{id}'
+end
+
+delete '/notes/:id' do
+  redirect '/notes'
 end
