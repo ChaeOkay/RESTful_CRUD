@@ -4,7 +4,7 @@ end
 
 get '/notes' do
   @notes = Note.all
-  erb :all
+  erb :notes
 end
 
 get '/notes/new' do

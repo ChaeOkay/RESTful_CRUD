@@ -11,3 +11,8 @@ th {
 ul {
   list-style-type: none;
 }
+
+
+.single_note, .new_note, .edit_note {
+  display: none;
+}
