@@ -16,6 +16,7 @@ post '/notes' do
 end
 
 get '/notes/:id' do
+  @note = Note.find_by_id(params[:id])
   erb :single
 end
 
