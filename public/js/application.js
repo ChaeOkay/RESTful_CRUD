@@ -3,6 +3,17 @@ $(document).ready(function() {
   $('#new_note').on('click', function(e){
     e.preventDefault();
     $('.new_note').toggle();
+
+    $('#submit_new').on('click', function(e){
+      e.preventDefault();
+      $.ajax({
+        url: '/notes',
+        type: 'post',
+        data: $('#new_form').serialize();
+      }).done(function(response){
+      });
+    });
+
   });
 
 });

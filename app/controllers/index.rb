@@ -7,13 +7,10 @@ get '/notes' do
   erb :notes
 end
 
-get '/notes/new' do
-  # erb :new_note
-end
-
 post '/notes' do
-  Note.create(title: params[:title], content: params[:content])
-  redirect '/notes'
+  @note = Note.create(params)
+  content_type :json
+  { :title => @note.title, :content => @note.content }.to_json
 end
 
 get '/notes/:id' do
