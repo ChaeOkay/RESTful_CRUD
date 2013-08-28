@@ -1,10 +1,3 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
-
 th {
   text-align: left;
 }
@@ -14,5 +7,21 @@ ul {
 }
 
 .single_note, .new_note, .edit_note {
+  display: none;
+}
+
+.title {
+  width: 10em;
+}
+
+.span1 {
+    margin: 0;
+}
+
+.btnform {
+  margin-top: 19px;
+}
+
+input.edit {
   display: none;
 }

@@ -1,13 +1,30 @@
-<div class='all_notes'>
-  <div><a id='new_note' href=''>Create New Note</a>
-  </div>
+<div>
+  <table class='table table-striped'>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    <% @notes.each do |note| %>
 
-  <div>
-    <ul class="note_title">
-      <% @notes.each do |note| %>
-        <li><a href=''><%= note.title %></a></li>
-      <% end %>
-    </ul>
-  <div>
+    <tr>
+      <th class='title'>
+          <span class='span1'>
+            <a href=''><%= note.title %></a>
+            <input id='edit_title' class='span2 edit' id='formtitle' type='text'>
+          </span>
+        </th>
 
+      <td class='note_content'>
+        <span class='span4'>
+            <%= note.content %>
+            <input id='edit_content' class='span4 edit' id='formtitle' type='text'>
+          </span>
+      </td>
+      <td>
+        <input id='edit_submit' class='btn btnform edit' type='submit'>
+      <td>
+    </tr>
+
+    <% end %>
+  </table>
 </div>

@@ -12,9 +12,16 @@ $(document).ready(function() {
         data: $('#new_form').serialize()
       }).done(function(response){
         $('.note_title').append('<li><a href="">' + response.title + '</a></li>');
+        $('#new_form')[0].reset();
       });
     });
-
   });
+
+
+
+  $('li a').on('click', function(e){
+    e.preventDefault();
+    console.log(this);
+  })
 
 });
