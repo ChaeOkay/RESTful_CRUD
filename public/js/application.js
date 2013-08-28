@@ -9,8 +9,9 @@ $(document).ready(function() {
       $.ajax({
         url: '/notes',
         type: 'post',
-        data: $('#new_form').serialize();
+        data: $('#new_form').serialize()
       }).done(function(response){
+        $('.note_title').append('<li><a href="">' + response.title + '</a></li>');
       });
     });
 

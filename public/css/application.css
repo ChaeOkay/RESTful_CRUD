@@ -4,6 +4,7 @@
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
+
 th {
   text-align: left;
 }
@@ -11,7 +12,6 @@ th {
 ul {
   list-style-type: none;
 }
-
 
 .single_note, .new_note, .edit_note {
   display: none;
