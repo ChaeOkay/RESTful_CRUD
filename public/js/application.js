@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $('#new_note').on('click', function(e){
     e.preventDefault();
-    $('.new_note').toggle();
+    $('.new_note').show();
 
     $('#submit_new').on('click', function(e){
       e.preventDefault();
@@ -12,7 +12,9 @@ $(document).ready(function() {
         data: $('#new_form').serialize()
       }).done(function(response){
         $('.note_title').append('<li><a href="">' + response.title + '</a></li>');
+        //why doesn't line 14 show automatically?
         $('#new_form')[0].reset();
+        $('.new_note').hide();
       });
     });
   });

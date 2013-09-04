@@ -25,3 +25,7 @@ ul {
 input.edit {
   display: none;
 }
+
+.new_note {
+  display: none;
+}
